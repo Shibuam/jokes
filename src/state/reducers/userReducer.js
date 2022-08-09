@@ -24,10 +24,11 @@ const userSlice = createSlice({
     
       }
       else{
-        state.userReducer.error="invalid credentials"
+        state.error="invalid credentials"
       }
     },
     logOut:(state,action)=>{
+
       state.userData={};
       localStorage.removeItem('userInfo')
     }
@@ -35,6 +36,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { userChecking } = userSlice.actions;
+export const { userChecking,logOut } = userSlice.actions;
 
 export default userSlice.reducer;

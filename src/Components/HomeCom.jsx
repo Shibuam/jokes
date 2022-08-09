@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getCategories, getJokes } from '../state/reducers/JokeReducer'
 import {Checkbox,FormGroup,FormControlLabel, TextField,Button} from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
+import {logOut} from '../state/reducers/userReducer'
 
 const HomeCom = () => {
  
@@ -28,7 +29,7 @@ useEffect(()=>{
 },[])
 
 const logOutHandler=()=>{
-  dispatch()
+  dispatch(logOut())
 }
 
 let categories=useSelector((state)=>state.jokeReducer.categories)
